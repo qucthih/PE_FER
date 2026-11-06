@@ -38,7 +38,7 @@ export default function Header() {
               >
                 Books
               </Link>
-              <span data-testid="user-email" className="text-sm font-medium text-muted-foreground hidden sm:inline-block">
+              <span data-testid="user-email" className="text-xs sm:text-sm font-medium text-muted-foreground max-w-[120px] sm:max-w-none truncate inline-block">
                 {user.email}
               </span>
               <Button
