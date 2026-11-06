@@ -11,15 +11,15 @@ export default function BookFilters() {
     useBooks();
 
   return (
-    <Card className="w-full shadow-sm mb-6">
+    <Card className="w-full rounded-2xl border border-border/80 bg-white shadow-sm mb-6">
       <CardContent className="p-4">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <div className="w-full sm:w-48">
+          <div className="w-full sm:w-44">
             <select
               data-testid="filter-status"
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-xl border border-border bg-slate-50/50 px-3 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:bg-white cursor-pointer font-medium"
             >
               <option value="">All</option>
               <option value="To Read">To Read</option>
@@ -35,6 +35,7 @@ export default function BookFilters() {
               placeholder="Search by title or author..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              className="h-10 rounded-xl border-border bg-slate-50/50 px-3.5 text-sm focus-visible:bg-white focus-visible:ring-primary"
             />
           </div>
 
@@ -44,7 +45,7 @@ export default function BookFilters() {
               variant="outline"
               data-testid="btn-clear-filters"
               onClick={clearFilters}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto h-10 rounded-xl border-border font-semibold shadow-sm text-sm hover:bg-slate-50"
             >
               Clear
             </Button>
@@ -54,4 +55,3 @@ export default function BookFilters() {
     </Card>
   );
 }
-
